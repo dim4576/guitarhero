@@ -50,3 +50,6 @@ class Tbline():
 		for i in range(len(self.tabs) ):
 			self.tabs[i].drop()
 			
+	def kill_last(self):
+		if not self.tabs: return
+		self.tabs.pop(0)
