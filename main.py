@@ -14,12 +14,15 @@ WHITE = 255,255,255
 AZURE = 0,255,255
 PURPLE = 255,0,255
 YELLOW = 255,255,0
+RED = 255,0,0
+GREEN = 0,255,0
+BLUE = 0,0,255
 
 S = SU((wegth,hegth), FPS)
 
-tablR = Tbline(wegth // 2 -80, (255,0,0), S.surf)
-tablG = Tbline(wegth // 2, (0,255,0), S.surf)
-tablB = Tbline(wegth // 2 +80, (0,0,255), S.surf)
+tablR = Tbline(firstLineX, RED, S.surf)
+tablG = Tbline(secondLineX, GREEN, S.surf)
+tablB = Tbline(thredLineX, BLUE, S.surf)
 
 def shar():
 	PG.draw.rect(S.surf, WHITE, (firstLineX - 20, hegth - 40, 200, 30))
