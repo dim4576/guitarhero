@@ -68,12 +68,16 @@ class Tbline():
 		PG.draw.circle(self.surf, 
 					   (0,255,255),
 					   (self.posX, self.height - 50),
-					   34, 4)
+					   34, 2)
 		if self.key_status:
 			PG.draw.circle(self.surf,
 						   self.color,
 						   (self.posX, self.height - 50),
-						   30)
+						   20)
+			PG.draw.circle(self.surf, 
+					   (0,255,255),
+					   (self.posX, self.height - 50),
+					   24, 4)
 
 	def set_stat(self, status_key):
 		self.key_status = status_key
