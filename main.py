@@ -26,9 +26,6 @@ tablB = Tbline(thredLineX, BLUE, S.surf)
 
 def shar():
 	PG.draw.rect(S.surf, WHITE, (firstLineX - 20, hegth - 40, 200, 30))
-	#PG.draw.line(S.surf, AZURE, [firstLineX, 0], [firstLineX, hegth], 3)
-	#PG.draw.line(S.surf, PURPLE, [secondLineX, 0], [secondLineX, hegth], 3)
-	#PG.draw.line(S.surf, YELLOW, [thredLineX, 0], [thredLineX, hegth], 3)
 	tablR.drop()
 	tablG.drop()
 	tablB.drop()

@@ -12,7 +12,7 @@ class Tab():
 
 	def drop(self):
 		if self.alive:
-			self.circle.move(0,3)
+			self.circle.move(0,1)
 			self.circle.show()
 			self.howU()
 
@@ -39,6 +39,7 @@ class Tbline():
 		self.surf = surface
 		self.tabs = list()
 		self.weight, self.height = self.surf.get_size()
+		self.colorR, self.colorG, self.colorB = self.color
 
 
 	def add(self):
@@ -49,15 +50,26 @@ class Tbline():
 
 
 	def drop(self):
-		PG.draw.line(self.surf, (255,255,0), [self.posX, 0], [self.posX,self.height], 3 )
+		PG.draw.line(self.surf, 
+					 (255, 255, 0), #yellow
+					 [self.posX, 0], 
+					 [self.posX, self.height], 
+					 3)
+
 		for i in range(len(self.tabs) ):
 			if  not self.tabs[i].get_alive():
 				self.tabs.pop(i)
 				break
 
-
 		for i in range(len(self.tabs) ):
 			self.tabs[i].drop()
+
+		PG.draw.circle(self.surf, 
+					   ((self.colorR - 20)%255, 
+					   	(self.colorG - 20)%255,
+					   	(self.colorB - 20)%255),
+					   (self.posX, self.height - 50),
+					   34, 4)
 
 			
 	def kill_last(self):
