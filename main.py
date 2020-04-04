@@ -38,11 +38,18 @@ def shar():
 	for i in S.ivents:
 		if i.type == PG.KEYDOWN:
 			if i.key == PG.K_3:
-				tablR.kill_last()
+				tablR.set_stat(True)
 			if i.key == PG.K_4:
-				tablG.kill_last()
+				tablG.set_stat(True)
 			if i.key == PG.K_5:
-				tablB.kill_last()
+				tablB.set_stat(True)
+		if i.type == PG.KEYUP:
+			if i.key == PG.K_3:
+				tablR.set_stat(False)
+			if i.key == PG.K_4:
+				tablG.set_stat(False)
+			if i.key == PG.K_5:
+				tablB.set_stat(False)
 
 S.setExecute(shar)
 

@@ -40,6 +40,7 @@ class Tbline():
 		self.tabs = list()
 		self.weight, self.height = self.surf.get_size()
 		self.colorR, self.colorG, self.colorB = self.color
+		self.key_status = False
 
 
 	def add(self):
@@ -65,11 +66,18 @@ class Tbline():
 			self.tabs[i].drop()
 
 		PG.draw.circle(self.surf, 
-					   ((self.colorR - 20)%255, 
-					   	(self.colorG - 20)%255,
-					   	(self.colorB - 20)%255),
+					   (0,255,255),
 					   (self.posX, self.height - 50),
 					   34, 4)
+		if self.key_status:
+			PG.draw.circle(self.surf,
+						   self.color,
+						   (self.posX, self.height - 50),
+						   30)
+
+	def set_stat(self, status_key):
+		self.key_status = status_key
+
 
 			
 	def kill_last(self):
