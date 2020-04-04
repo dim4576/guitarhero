@@ -28,12 +28,18 @@ class Tab():
 	def rebuild(self):
 		self.__init__(self.startPosX, self.startColor, self.surf)
 
+
+
 class Tbline():
+
+
 	def __init__(self, posX, color, surface):
 		self.posX = posX
 		self.color = color
 		self.surf = surface
 		self.tabs = list()
+		self.weight, self.height = self.surf.get_size()
+
 
 	def add(self):
 		if self.tabs:
@@ -41,14 +47,18 @@ class Tbline():
 				return
 		self.tabs.append(Tab(self.posX, self.color, self.surf))
 
+
 	def drop(self):
+		PG.draw.line(self.surf, (255,255,0), [self.posX, 0], [self.posX,self.height], 3 )
 		for i in range(len(self.tabs) ):
 			if  not self.tabs[i].get_alive():
 				self.tabs.pop(i)
 				break
 
+
 		for i in range(len(self.tabs) ):
 			self.tabs[i].drop()
+
 			
 	def kill_last(self):
 		if not self.tabs: return
