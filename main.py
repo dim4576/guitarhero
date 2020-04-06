@@ -43,6 +43,13 @@ def shar():
 				tablG.set_stat(True)
 			if i.key == PG.K_5:
 				tablB.set_stat(True)
+			if i.key == PG.K_RIGHTBRACKET or i.key == PG.K_LEFTBRACKET:
+				if tablR.get_stat():
+					tablR.kill_tab()
+				if tablG.get_stat():
+					tablG.kill_tab()
+				if tablB.get_stat():
+					tablB.kill_tab()
 		if i.type == PG.KEYUP:
 			if i.key == PG.K_3:
 				tablR.set_stat(False)

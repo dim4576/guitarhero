@@ -82,6 +82,16 @@ class Tbline():
 	def set_stat(self, status_key):
 		self.key_status = status_key
 
+	def kill_tab(self):
+		for i in range(len(self.tabs) ):
+			x,y = self.tabs[i].circle.get_pos()
+			if y > self.height - 110 and y < self.height + 10:
+				self.tabs.pop(i)
+				break
+
+	def get_stat(self):
+		return self.key_status
+
 
 			
 	def kill_last(self):
